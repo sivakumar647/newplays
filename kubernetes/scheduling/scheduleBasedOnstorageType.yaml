@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: ssd-pod
+ namespace: finance
+ labels:
+  lab: web
+spec:
+ containers:
+ - name: ssd-selection
+   image: nginx
+ nodeSelector:
+  storage-Type: ssd

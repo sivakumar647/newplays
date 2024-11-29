@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    app: repli
+  name: repli
+spec:
+  replicas: 9
+  selector:
+    matchLabels:
+      app: replica-set
+  template:
+    metadata:
+      labels:
+        app: replica-set
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        command: ["sleep", "1000"]

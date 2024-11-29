@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: fourth-deploy
+  name: fourth-deploy
+  namespace: alc-prod
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: fourth-deploy
+  template:
+    metadata:
+      labels:
+        app: fourth-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

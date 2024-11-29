@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kual00201
+  name: kual00201
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kual00201
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kual00201
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

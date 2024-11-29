@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: itworks
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    mine: itworks
+status:
+  loadBalancer: {}
+---
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    mine: itworks
+  name: itworks
+spec:
+  containers:
+  - image: nginx
+    name: itworks
+    ports:
+    - containerPort: 80

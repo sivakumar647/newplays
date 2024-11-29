@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: schedule-pod
+  name: schedule-pod
+spec:
+  containers:
+  - image: nginx
+    name: schedule-pod
+  nodeName: worker2.alclabs.in

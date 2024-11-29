@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: third
+  name: alpine-busybox-third
+  namespace: alc-prod
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["sleep", "1000"]
+  - image: busybox
+    name: busybox
+    command: ["sleep", "1000"]

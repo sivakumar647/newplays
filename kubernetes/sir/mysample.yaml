@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-ns-pod
+  labels:
+    app: redis
+  namespace: alc-dev
+spec:
+  containers:
+  - name: redis
+    image: redis
+

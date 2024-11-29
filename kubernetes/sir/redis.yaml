@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod
+  name: pod
+  namespace: temp-bus
+spec:
+  containers:
+  - image: redis:alpine
+    name: pod

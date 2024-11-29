@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: my-pod-resources
+spec:
+  containers:
+   - name: my-container
+     image: nginx
+     resources:
+       requests:
+         memory: "1Mi"   #Minimum amount of cpu and memeory the pod required
+         cpu: "2m"
+       limits:
+         memory: "10Mi"  #Maximum amount of cpu and memory the pod required
+         cpu: "5m"

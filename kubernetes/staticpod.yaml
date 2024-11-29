@@ -1,0 +1,12 @@
+#if this manifest file is kept in /etc/kubernetes/manifests/ then it will create pod automatically after manifest file deletion from the directory the pod will delete automatically
+apiVersion: v1
+kind: Pod
+metadata:
+ name: static-pod
+ labels:
+  app: kubesystem
+ namespace: kube-system
+spec:
+ containers:
+ - name: system-pod
+   image: alpine 

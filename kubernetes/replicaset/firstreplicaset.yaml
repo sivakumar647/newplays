@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    app: replica-set
+  name: replica-set
+  namespace: alc-prod
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: httpd-replica
+  template:
+    metadata:
+      labels:
+        app: httpd-replica
+    spec:
+      containers:
+      - image: httpd
+        name: httpd

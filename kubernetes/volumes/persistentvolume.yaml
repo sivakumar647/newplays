@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mypv
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: my-storage
+  hostPath:
+    path: "/webdata"
+
+#Retain: the data in the pv is retained and requests manual clean
+#Delete: The pv and its data is automatically deleted when pod dies
+#Recyle: The data is deleted and the pv is made available for reuse

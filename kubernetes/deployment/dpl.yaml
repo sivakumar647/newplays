@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-dpl
+  name: my-dpl
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: redis-img
+  template:
+    metadata:
+      labels:
+        app: redis-img
+        web: redis1.img
+    spec:
+      containers:
+      - image: redis
+        name: redis
+      - image: httpd
+        name: httpd

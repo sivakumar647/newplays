@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: service-deploy
+ labels:
+   app: service-deploy
+spec:
+ replicas: 10
+ selector:
+   matchLabels:
+     app: service-config
+ template:
+  metadata:
+     labels:
+        app: service-config
+  spec:
+    containers:
+    - name: nginx-config
+      image: nginx
+      ports:
+      - containerPort: 80

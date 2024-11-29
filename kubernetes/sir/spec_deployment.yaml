@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kual00201
+spec:
+  replicas: 7 #Numer of NGINX replicas
+  selector:
+    matchLabels:
+      app_runtime_stage: dev
+  template:
+    metadata:
+      labels:  
+        app_runtime_stage: dev  #Labels assigned to each pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx #Using official nginx image
+        ports: 
+        - containerPort: 80 #NGINX listens on port 80
